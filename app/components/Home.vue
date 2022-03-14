@@ -5,11 +5,26 @@
         </ActionBar>
         <StackLayout class="wrapper">
             <FlexboxLayout class="container-menu">
-                <Button class="container-menu__link"> Масса </Button>
-                <Button class="container-menu__link">Температура t°</Button>
-                <Button class="container-menu__link"> Длинна </Button>
-                <Button class="container-menu__link"> Площадь </Button>
-                <Button class="container-menu__link">Энергия ↯</Button>
+                <Button 
+                    class="container-menu__link"
+                    @tap="goToPage('/temperature')"
+                >Масса</Button>
+                <Button 
+                    class="container-menu__link"
+                    @tap="goToPage('/temperature')"
+                >Температура t°</Button>
+                <Button 
+                    class="container-menu__link"
+                    @tap="goToPage('/length')"
+                >Длинна</Button>
+                <Button 
+                    class="container-menu__link"
+                    @tap="goToPage('/area')"
+                >Площадь</Button>
+                <Button 
+                    class="container-menu__link"
+                    @tap="goToPage('/energy')"
+                >Энергия ↯</Button>
             </FlexboxLayout>
         </StackLayout>
 
@@ -19,6 +34,11 @@
 
 <script>
   export default {
+      methods: {
+          goToPage(route) {
+              this.$navigator.navigate(route)
+          }
+      },
   };
 </script>
 
@@ -44,10 +64,12 @@ Button {
         padding: 0;
         width: 43%;
         height: 11%;
+        border-radius: 17;
     
-        &:active {
-            color: #e0e2ff;
+        &:active &.tapped {
+            color: #af1616;
         }
+
     }
 }
 </style>
