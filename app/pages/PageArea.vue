@@ -95,16 +95,19 @@ export default {
                 :text="firstValueField" 
                 v-model="firstValueField"
                 hint="0"
-                width="50"
+                width="33%"
             />
             <button 
                 class="button-transfer"
                 @tap="reverse" 
                 text="⇆" 
+                width="33%"
+
             />
             <Label 
                 marginTop="30"
                 :text="result" 
+                width="33%"
             ></Label>
         </FlexboxLayout>
         <button 
